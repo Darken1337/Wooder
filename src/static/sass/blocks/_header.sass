@@ -1,0 +1,173 @@
+.header-navigation
+  display: flex
+  justify-content: space-between
+  padding: 35px 27px 0
+  align-items: flex-start
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 99
+
+.menu-hamburger
+  position: relative
+  z-index: 10
+  cursor: pointer
+  &::after
+    content: 'Menu'
+    display: block
+    position: absolute
+    left: 100%
+    top: 50%
+    transform: translateY(-50%)
+    color: $header-text
+    padding-left: 12px
+    font-size: 1.5rem
+    text-transform: uppercase
+    +proxnov-b
+    opacity: $header-opacity
+
+  &__line
+    width: 27px
+    height: 1px
+    background-color: $brownish-main
+
+    &:not(:last-child)
+      margin-bottom: 9px
+
+.logo
+  color: $header-light
+  font-size: 3.6rem
+  letter-spacing: 10.8px
+  text-transform: uppercase
+  position: relative
+  +proxnov-b
+  cursor: pointer
+  margin-right: 10rem
+  transition: .3s
+  &:hover
+    color: $brownish-main
+
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    top: 50%
+    left: 21%
+    width: 6.4rem
+    height: 0.4rem
+    transition: .3s
+    background-color: $brownish-main
+
+  &:hover::before
+    background-color: $header-light
+
+.header-menu
+  display: flex
+  align-items: center
+  & > *:not(:last-child)
+    margin-right: 10rem
+  &__link
+    color: $header-text
+    +proxnov-b
+    text-transform: uppercase
+    font-size: 1.5rem
+    &:hover
+      color: #917f5f
+    
+
+.menu-side
+  display: flex
+  align-items: center
+  &__information
+    width: 2.3rem
+    height: 2.3rem
+    background: url('../img/header-info.png') no-repeat top left /cover
+    margin-right: 5.2rem
+  &__language
+    font-size: 1.5rem
+    color: $header-text
+    opacity: $header-opacity
+    display: inline-block
+    +proxnov-b
+    position: relative
+    cursor: pointer
+    &::after
+      content: url('../img/header-arrow-down.png')
+      display: inline-block
+      width: 6px
+      height: 4px
+      position: absolute
+      top: 19%
+      left: 100%
+      transform: rotate(0deg)
+      margin-left: 5px
+    &--active::after
+      animation: rotateUpDown .3s linear forwards
+      transform: rotate(180deg)
+    &-drop
+      display: none
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      padding: 5px 0
+
+  &__choise
+    padding: 5px 0 
+    cursor: pointer
+
+.header-menu-adaptive
+  position: relative
+  padding-top: 4rem
+  &-wrapper
+    position: absolute
+    top: 0
+    left: 0
+    height: 100vh
+    max-width: 480px
+    min-width: 320px
+    transform: translateX(-100%)
+    background-color: rgba(#000, .4)
+    z-index: 999
+    padding-left: 20px
+    &--active
+      animation: .6s slideRight linear forwards
+  & > *:not(:last-child)
+    margin-bottom: 2rem
+  &__link
+    width: 60%
+    margin: 0 auto
+    text-align: left
+    font-size: 3rem
+    text-transform: uppercase
+    color: $header-light
+  &-close
+    position: absolute
+    top: 30px
+    right: 15px
+    cursor: pointer
+    &__line
+      width: 20px
+      height: 2px
+      background-color: #fff
+      &:first-child
+        transform: rotate(-45deg)
+        margin-bottom: -2px
+      &:nth-child(2)
+        transform: rotate(45deg)
+
+@media screen and (max-width: 850px)
+  .header-menu
+    display: none
+
+  .menu-side__information
+    display: none
+
++respond(phone)
+  .menu-side
+    display: none
+
+  .logo
+    margin-right: 0
+    font-size: 3rem

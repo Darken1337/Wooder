@@ -1,0 +1,68 @@
+.design
+  border: 1px solid $design-main
+  padding: 11.25vw  28.8vw 11.25vw  19.583vw
+  &-wrapper
+    background-repeat: no-repeat 
+    background-position: center center
+    background-size: cover
+    padding: 4.69vw 9.38vw
+
+  &__title
+    color: $design-main
+    text-transform: uppercase
+    +proxnov-b
+    font-size: 4.8rem
+    max-width: 500px
+    margin-bottom: 5.4rem
+    position: relative
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 25%
+      left: -5%
+      transform: translateX(-100%)
+      width: 151px
+      height: 1px
+      background-color: #ffffff
+
+  &__text
+    color: $header-light
+    font-size: 1.5rem
+    max-width: 400px
+    line-height: 25px
+    letter-spacing: 0.38px
+    position: relative
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 10%
+      left: -5%
+      transform: translateX(-100%)
+      width: 44px
+      height: 4px
+      background-color: #bea67c
+  &__button
+    border: 1px solid #fff
+    padding: 10px 20px
+    color: #fff
+    font-size: 18px
+    text-transform: uppercase
+    margin-top: 3rem
+
+  
++respond(tablet)
+  .design
+    padding-right: 0
+    padding-left: 0
+    text-align: center
+    &__title
+      margin: 0 auto 5.4rem auto
+      &::before
+        display: none
+    &__text
+      margin: 0 auto
+      &::before
+        display: none
+        

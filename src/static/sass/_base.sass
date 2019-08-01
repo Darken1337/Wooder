@@ -1,0 +1,60 @@
+@import 'mixins.scss';
+  
+  
+html
+  scroll-behavior: smoothbowe
+  font-size: 62.5%
+  +proxnov-r
+  @include respond(phone)
+    font-size: 30%
+  @include respond(tablet)
+    font-size: 40%
+  @include respond(desktop)
+    font-size: 50%
+    
+*
+  box-sizing: border-box
+    
+.container
+  max-width: 1190px
+  margin: 0 auto
+  @media screen and(max-width: 1200px)
+    width: 90%
+
+form
+  margin: 0
+
+body, 
+ul,
+h1,
+h2,
+h3,
+h4,
+p
+  margin: 0 
+  padding: 0
+
+ul
+  list-style: none
+  &>li
+    display: block
+    padding: 0
+
+a,
+button
+  display: inline-block
+  text-decoration: none
+  border: 0
+  background: transparent
+  color: inherit
+  outline: 0
+  cursor: pointer
+  &:focus
+    outline: 0
+
+input
+  display: inline-block
+  outline: 0
+
+.position-relative
+  position: relative

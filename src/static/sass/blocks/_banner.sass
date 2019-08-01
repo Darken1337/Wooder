@@ -1,0 +1,185 @@
+.banner
+  max-width: 535px 
+  padding-top: 28.17vh
+  margin-left: 18.6vw
+  padding-bottom: 12.23vh
+
+  &-wrapper
+    width: 100%
+    background-position: top center 
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    overflow: hidden
+
+  &__heading
+    font-size: 10rem
+    color: $brownish-main
+    letter-spacing: 20.01px
+    text-transform: uppercase
+
+  &__button
+    margin-top: 6rem
+    background-color: transparent
+    color: $header-light
+    padding: 2.4rem 8.5rem
+    text-transform: uppercase
+    border: 2px solid $header-light
+    font-size: 1.4rem
+    font-weight: 700
+    letter-spacing: 2.8px
+    margin-bottom: 6.8rem
+
+    &:hover
+      img
+        animation: jumpRight 1s forwards ease-in infinite
+
+    img
+      padding-left: 8px
+      position: relative
+  &__subtitle
+    position: absolute
+    top: 50%
+    right: 5.2%
+    color: #fff
+    transform: rotate(90deg) translateY(-50%)
+    z-index: 10
+    word-spacing: 17px
+    text-transform: uppercase
+    color: $brownish-main
+    font-size: 16px
+    letter-spacing: 2px
+  &-share
+    position: absolute
+    right: 30px
+    bottom: 20px
+    &__button
+      background-color: rgba(#fff, .5)
+      width: 37px
+      height: 37px
+      border-radius: 50%
+      cursor: pointer
+      position: relative
+      z-index: 9999999
+
+.page-count
+  position: fixed
+  top: 296px
+  left: 0
+  color: $brownish-main
+  display: flex
+  flex-direction: column
+  align-items: center
+  z-index: 100
+
+  &__number
+    display: inline-block
+    transform: rotate(90deg)
+    +proxnov-b
+    font-size: 9rem
+    &::before
+      content: ''
+      display: inline-block
+      width: 51px
+      height: 4px
+      background-color: $brownish-main
+      margin-bottom: 3rem
+      margin-right: 18px
+
+  &__dots
+    margin-top: 8.5rem
+
+  &__dot
+    width: 18px
+    height: 18px
+    border-radius: 50%
+    background-color: $gray-main
+    cursor: pointer
+
+    &--active
+      background-color: $brownish-main
+    &:not(:last-child)
+      margin-bottom: 4rem
+
+.scroll
+  display: flex
+  flex-direction: column
+  align-items: center
+  max-width: 30px
+
+  &__mouse
+    margin-bottom: 23px
+    width: 20px
+    height: 35px
+    border-radius: 14px
+    border: 1px solid $header-light
+    position: relative
+
+  &__wheel
+    position: absolute
+    top: 6px
+    left: 50%
+    transform: translateX(-50%)
+    width: 4px
+    height: 6px
+    background-color: #fff
+    border-radius: 10px
+    animation: scrollWheel 1s forwards infinite linear
+
+  &__arrow
+    margin-bottom: 47px
+    position: relative
+    animation: moveDown .6s forwards infinite linear
+
+  &__description
+    color: $gray-main
+    transform: rotate(90deg)
+    font-size: 1.4rem
+    letter-spacing: 2.8px
+    font-weight: 700
+    text-transform: uppercase
+
+
+
+.socials
+  display: flex
+  position: absolute
+  top: 0
+  transform: translateX(0%)
+  opacity: 0
+  &--active
+    animation: slideLeft linear 1s forwards
+    transform: translateX(-100%)
+    opacity: 1
+  &--out
+    animation: slideLeft linear 1s backwards
+    transform: translateX(0%)
+    opacity: 0
+
+  &-icon
+    border: 1px solid #d9d9d9
+    border-radius: 50%
+    width: 37px
+    height: 37px
+    margin-right: 10px
+    color: #ffffff
+    position: relative
+    &:hover
+      background-color: #d9d9d9
+    i
+      font-size: 2rem
+      +centerItem
+    
++respond(tablet)
+  .page-count
+    display: none
+
+  .banner
+    margin: 0 auto
+    &__subtitle
+      display: none
+
++respond(phone)
+  .banner__heading
+    font-size: 6rem
+    letter-spacing: 10px

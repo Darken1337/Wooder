@@ -1,0 +1,143 @@
+.product
+  display: flex
+  position: relative
+  align-items: center
+  margin-bottom: 12vw
+  &-number
+    color: $main-black
+    +proxnov-b
+    font-size: 3.6rem
+    position: absolute
+    bottom: 10px
+    left: 2%
+    letter-spacing: 2.7px
+    display: inline-block
+    &--two
+      left: 90%
+    &__dot
+      color: $brownish-main
+      
+  &-description
+    padding: 12rem 4.5rem 2rem 18.5rem
+    flex-basis: 50%
+    &--right
+      padding: 12rem 18.5rem 2rem 4.5rem
+    &__heading
+      font-size: 4.8rem
+      color: $main-black
+      +proxnov-b
+      letter-spacing: 3.36px
+      text-transform: uppercase
+      position: relative
+      padding-left: 29px
+      &--right
+        padding-left: 0
+        padding-right: 29px
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translate(-100%, -50%)
+        width: 151px
+        height: 2px
+        background-color: $main-black
+      &--right::before
+        left: 100%
+        transform: translate(0%, -50%)
+    &__text
+      margin: 3.2rem 0
+      padding-left: 29px
+      line-height: 1.67
+      font-size: 1.5rem
+      color: $product-text
+      position: relative
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        top: 19%
+        transform: translateX(-100%)
+        width: 44px
+        height: 4px
+        background-color: $brownish-main
+      &--right
+        padding-right: 29px
+        padding-left: 0
+        &::before
+          left: 100%
+          transform: translateX(0%)
+    &__button
+      margin-left: 29px
+      +proxnov-b
+      font-size: 1.4rem
+      letter-spacing: 2.8px
+      text-transform: uppercase
+      padding: 1.5rem 0
+      position: relative
+      display: inline-block
+      min-width: 160px
+      cursor: pointer
+      &:hover
+        img
+          animation: jumpRight 1s forwards ease-in infinite
+      &:hover::after
+        width: 100%
+      &--right
+        margin-left: 30%
+        transform: translateX(-50%)
+      img
+        position: relative
+        padding-left: 9px
+        margin-bottom: 2px
+      &::after
+        content: ''
+        display: block
+        width: 44px
+        height: 2px
+        background-color: $brownish-main
+        position: absolute
+        bottom: 0
+        left: 0
+        transition: .3s
+  &-img
+    flex-basis: 50%
+    img
+      width: 100%
+      height: auto
+  
++respond(laptop)
+  .product
+    flex-direction: column
+    &-img
+      width: 62%
+      margin: 0 auto
+    &-description
+      width: 70%
+      margin: 0 auto
+      &__button
+        &--right
+          margin-left: 0
+          transform: translateX(0%)
+
++respond(tablet)
+  .product
+    &-description
+      width: 100%
+      padding-left: 0
+      padding-right: 0
+      text-align: center
+      &__heading
+        &::before
+          display: none
+      &__text
+        max-width: 350px
+        margin: 3.2rem auto
+        &::before
+          display: none
+    &-img
+      width: 70%
+      margin: 0 auto
+  
